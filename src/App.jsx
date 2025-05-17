@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import MoodButton from './components/MoodButton';
 import MoodStats from './components/MoodStats';
 
@@ -17,6 +17,10 @@ function App() {
     excited: 0,
     meh: 0,
   });
+
+  useEffect(()=>{
+    console.log("Testing")
+  },[counts])
 
   // 2️⃣  Update state immutably
   function handleVote(mood) {
