@@ -6,16 +6,18 @@ function MoodStats({ counts=0 }) {
   */
 
   const { happy, tired, excited, meh} = counts
-
-  console.log(counts)
-
   const totalCount = happy + tired + excited + meh
+  let happyPercent = 0
+  let tiredPercent = 0
+  let excitedPercent = 0
+  let mehPercent = 0
 
-  const happyPercent = Math.round((happy/totalCount)*10000)/100
-  const tiredPercent = Math.round((tired/totalCount)*10000)/100
-  const excitedPercent = Math.round((excited/totalCount)*10000)/100
-  const mehPercent = Math.round((meh/totalCount)*10000)/100
-
+  if(totalCount>0){
+    happyPercent = Math.round((happy/totalCount)*10000)/100
+    tiredPercent = Math.round((tired/totalCount)*10000)/100
+    excitedPercent = Math.round((excited/totalCount)*10000)/100
+    mehPercent = Math.round((meh/totalCount)*10000)/100
+  }
 
   return (
     <section className="stats">

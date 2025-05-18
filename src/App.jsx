@@ -18,10 +18,6 @@ function App() {
     meh: 0,
   });
 
-  useEffect(()=>{
-    console.log("Testing")
-  },[counts])
-
   // 2️⃣  Update state immutably
   function handleVote(mood) {
     setCounts(prev => ({ ...prev, [mood]: prev[mood] + 1 }));
